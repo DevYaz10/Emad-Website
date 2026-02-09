@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأرشيف - منصة تبيان</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-item" onclick="window.location.href='index.html'" title="الرئيسية"><i
+                class="fa-solid fa-house"></i></div>
+        <div class="sidebar-item active" title="الأرشيف"><i class="fa-solid fa-box-archive"></i></div>
+    </nav>
+    <div class="app-container">
+        <header class="top-header">
+            <div class="header-right">
+                <div class="tibyan-logo"
+                    style="font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-book-quran" style="color: var(--accent-green);"></i> تبيان
+                </div>
+            </div>
+            <div class="header-left">
+                <div class="header-icons">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <div style="padding: 120px 60px;">
+            <h1 style="margin-bottom: 20px;">الأرشيف الرقمي</h1>
+            <p style="color: #aaa; margin-bottom: 40px;">تصفح آلاف الدروس والمحاضرات السابقة.</p>
+
+            <div class="circulars-grid">
+                <!-- Reusing circular card style for lessons -->
+                <div class="circular-card" onclick="window.location.href='lesson_detail.html'">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
+                            alt="Lesson Image">
+                        <span class="date-badge">2024</span>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h4 style="margin-bottom: 5px;">شرح بلوغ المرام</h4>
+                            <p style="font-size: 0.8rem; color: #aaa;">الشيخ د. عبدالكريم الخضير</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

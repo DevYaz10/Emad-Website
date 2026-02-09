@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البث المباشر - منصة تبيان</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .live-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+            padding: 100px 40px 40px 80px;
+            /* Adjust for sidebar */
+            height: 100vh;
+        }
+
+        .video-box {
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .chat-box {
+            background-color: rgba(0, 31, 29, 0.6);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .chat-header {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .message .user {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .chat-input-area {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .translation-toggle {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .translation-toggle.active {
+            background: var(--accent-green);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar (Same as Index) -->
+    <nav class="sidebar">
+        <div class="sidebar-item" onclick="window.location.href='index.html'" title="الرئيسية"><i
+                class="fa-solid fa-house"></i></div>
+        <div class="sidebar-item active" title="الدروس المباشرة"><i class="fa-solid fa-video"></i></div>
+        <!-- ... -->
+    </nav>
+
+    <div class="accessibility-bar">
+        <!-- Accessibility Buttons Copied -->
+        <button id="neuro-mode" title="وضع الأمان العصبي"><i class="fa-solid fa-brain"></i></button>
+        <button id="vision-mode" title="وضع ضعف البصر"><i class="fa-solid fa-eye"></i></button>
+        <button id="dyslexic-mode" title="خط القراءة السهل"><i class="fa-solid fa-font"></i></button>
+    </div>
+
+    <div class="app-container">
+        <header class="top-header">
+            <div class="header-right">
+                <div class="tibyan-logo"
+                    style="font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-book-quran" style="color: var(--accent-green);"></i> تبيان
+                </div>
+            </div>
+            <div class="header-left">
+                <div class="header-icons">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="live-container">
+            <div class="video-box">
+                <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000"
+                    class="video-placeholder">
+                <div class="live-badge"><i class="fa-solid fa-circle fa-beat" style="font-size: 0.6rem;"></i> مباشر
+                </div>
+                <button class="translation-toggle" onclick="this.classList.toggle('active')">
+                    <i class="fa-solid fa-language"></i> الترجمة الفورية: <span>إيقاف</span>
+                </button>
+                <i class="fa-solid fa-play-circle"
+                    style="position: absolute; font-size: 5rem; opacity: 0.8; cursor: pointer;"></i>
+
+                <!-- Subtitles simulation container -->
+                <div id="subtitles"
+                    style="position: absolute; bottom: 80px; text-align: center; width: 80%; background: rgba(0,0,0,0.6); padding: 5px; border-radius: 5px; display: none;">
+                    [الترجمة الفورية تظهر هنا...]
+                </div>
+            </div>
+
+            <div class="chat-box">
+                <div class="chat-header">
+                    المحادثة المباشرة
+                </div>
+                <div class="chat-messages" id="chat">
+                    <div class="message"><span class="user">محمد:</span> السلام عليكم ورحمة الله</div>
+                    <div class="message"><span class="user">Admin:</span> وعليكم السلام، الدرس سيبدأ بعد قليل</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" placeholder="اكتب سؤالك للشيخ..." id="chatInput">
+                    <button style="background: none; border: none; color: var(--accent-green); cursor: pointer;"
+                        onclick="sendMsg()"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Chat Simulation
+        function sendMsg() {
+            const input = document.getElementById('chatInput');
+            const chat = document.getElementById('chat');
+            if (input.value.trim() === '') return;
+
+            chat.innerHTML += `<div class="message"><span class="user">أنت:</span> ${input.value}</div>`;
+            input.value = '';
+            chat.scrollTop = chat.scrollHeight;
+
+            // Mock Auto Reply
+            if (Math.random() > 0.7) {
+                setTimeout(() => {
+                    chat.innerHTML += `<div class="message"><span class="user" style="color: yellow;">المشرف:</span> تم استلام سؤالك وسيتم عرضه.</div>`;
+                    chat.scrollTop = chat.scrollHeight;
+                }, 2000);
+            }
+        }
+
+        // Translation toggle logic
+        document.querySelector('.translation-toggle').addEventListener('click', function () {
+            const span = this.querySelector('span');
+            const subs = document.getElementById('subtitles');
+            if (this.classList.contains('active')) {
+                span.textContent = 'تشغيل'; // Logic inverted, active means it WAS active and now click turns it off? 
+                // Let's fix: if it HAS active class, it is ON.
+                span.textContent = 'تفعيل'; // wait, toggle adds active.
+            }
+
+            // Re-read toggle logic: click toggles class.
+            if (this.classList.contains('active')) {
+                span.textContent = 'مفعل';
+                subs.style.display = 'block';
+            } else {
+                span.textContent = 'إيقاف';
+                subs.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

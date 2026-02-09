@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة تبيان - أكاديمية رقمية ذكية</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <!-- Dyslexic Font (simulated with a fallback or similar free font if available, or just toggle class) -->
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Accessibility Bar (New) -->
+    <div class="accessibility-bar">
+        <button id="neuro-mode" title="وضع الأمان العصبي"><i class="fa-solid fa-brain"></i></button>
+        <button id="vision-mode" title="وضع ضعف البصر"><i class="fa-solid fa-eye"></i></button>
+        <button id="dyslexic-mode" title="خط القراءة السهل"><i class="fa-solid fa-font"></i></button>
+        <button id="tts-mode" title="تحويل النص إلى صوت"><i class="fa-solid fa-volume-high"></i></button>
+        <button id="car-mode" title="وضع المركبة"><i class="fa-solid fa-car"></i></button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+
+        <!-- Right Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-item active" title="القائمة">
+                <i class="fa-solid fa-bars"></i>
+                <span class="tooltip">القائمة</span>
+            </div>
+            <div class="sidebar-item" title="الرئيسية">
+                <i class="fa-solid fa-house"></i>
+                <span class="tooltip">الرئيسية</span>
+            </div>
+            <div class="sidebar-item" title="عن تبيان">
+                <i class="fa-solid fa-info-circle"></i>
+                <span class="tooltip">عن تبيان</span>
+            </div>
+            <div class="sidebar-item" title="الخدمات">
+                <i class="fa-solid fa-layer-group"></i>
+                <span class="tooltip">الخدمات</span>
+            </div>
+            <div class="sidebar-item" title="المسارات العلمية">
+                <i class="fa-solid fa-road"></i>
+                <span class="tooltip">المسارات العلمية</span>
+            </div>
+            <div class="sidebar-item" title="الأرشيف">
+                <i class="fa-solid fa-box-archive"></i>
+                <span class="tooltip">الأرشيف</span>
+            </div>
+            <div class="sidebar-item" title="الدروس المباشرة">
+                <i class="fa-solid fa-video"></i>
+                <span class="tooltip">الدروس المباشرة</span>
+            </div>
+            <div class="sidebar-item" title="الدعم والملاحظات">
+                <i class="fa-solid fa-headset"></i>
+                <span class="tooltip">الدعم والملاحظات</span>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <!-- 2030 Logo kept or removed based on user preference? Assuming removed for pure platform identity or kept as sponsor. Let's keep for realism if it's a Saudi platform -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Vision_2030_Logo.svg/1200px-Vision_2030_Logo.svg.png"
+                        alt="Vision 2030" class="vision-logo">
+                    <div class="header-icons">
+                        <i class="fa-solid fa-globe" title="تغيير اللغة"></i> <span>العربية</span>
+                        <i class="fa-solid fa-magnifying-glass" title="بحث"></i>
+                        <i class="fa-regular fa-user" title="حسابي"></i>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <!-- Placeholder Logo for Tibyan -->
+                    <div class="tibyan-logo"
+                        style="font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-book-quran" style="color: var(--accent-green);"></i> تبيان
+                    </div>
+                    <div class="menu-trigger">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <div class="breadcrumb-content">
+                    <h1>منصة تبيان</h1>
+                    <div class="path">
+                        <span>الرئيسية</span> <i class="fa-solid fa-chevron-left"></i> <span class="current">عن
+                            المنصة</span>
+                    </div>
+                </div>
+                <div class="breadcrumb-icon">
+                    <i class="fa-solid fa-robot" title="المساعد الذكي (معاجم)"></i>
+                </div>
+            </div>
+
+            <!-- Section 1: Hero -->
+            <section class="hero-section">
+
+                <!-- Left Image (Islamic Theme) -->
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1564121211835-e88c852648ab?q=80&w=1000&auto=format&fit=crop"
+                        alt="Students in Mosque">
+                    <div class="accessibility-icon" title="ملخص الدرس">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="hero-text-content">
+                    <h2>أكاديمية رقمية ذكية لرقمنة دروس الحرمين الشريفين</h2>
+                    <p>إيصال العلم الشرعي الموثوق للعالم بلغته وبأسلوب تفاعلي. أن تكون تبيان المرجع العالمي لتعلم القرآن
+                        والعلوم الشرعية رقميًا، لتسهيل الفهم لغير الناطقين بالعربية، ودعم التعلم الذاتي والتراكمي.</p>
+
+                    <a href="login.html" class="cta-button">ابدأ رحلتك في طلب العلم <i
+                            class="fa-solid fa-arrow-left"></i></a>
+
+                    <div class="cards-grid" style="margin-top: 30px;">
+                        <div class="info-card">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-language"></i>
+                            </div>
+                            <h3>الترجمة الفورية</h3>
+                            <p>متابعة الدروس بلغتك مباشرة أثناء البث</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <h3>توضيح المصطلحات</h3>
+                            <p>شرح الكلمات الصعبة دون مقاطعة الدرس</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <h3>الملخصات والاختبارات</h3>
+                            <p>مراجعة ذكية تقيس فهمك بعد كل درس</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Strategy (Educational Stats) -->
+            <section class="strategy-section">
+                <div class="section-header">
+                    <h2>مؤشراتنا التعليمية</h2>
+                    <div class="section-nav">
+                        <span>تبيان</span> <i class="fa-solid fa-chevron-left"></i> <span>الإحصائيات</span>
+                    </div>
+                    <div class="nav-arrow">
+                        <i class="fa-regular fa-circle-right"></i>
+                    </div>
+                </div>
+
+                <div class="strategy-content">
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card blue-card">
+                            <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <h4>+10,000 درس</h4>
+                            <p>عدد الدروس المؤرشفة بدقة عالية.</p>
+                        </div>
+                        <div class="stat-card dark-card">
+                            <div class="stat-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                            <h4>12+ لغة مدعومة</h4>
+                            <p>نصل لكل مسلم بلغته الأم لتسهيل فهم الدين الحنيف.</p>
+                        </div>
+                        <div class="stat-card blue-card">
+                            <div class="stat-icon"><i class="fa-solid fa-brain"></i></div>
+                            <h4>95% مؤشر الاستيعاب</h4>
+                            <p>تقنيات الذكاء الاصطناعي تساعد الطلاب على الفهم العميق.</p>
+                        </div>
+                        <div class="stat-card dark-card">
+                            <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <h4>نسبة إكمال المسارات</h4>
+                            <p>80% من الطلاب يكملون مساراتهم التعليمية بفضل التحفيز المستمر.</p>
+                        </div>
+                        <div class="stat-card dark-card wide-card">
+                            <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                            <h4>تعلم تراكمي ذكي</h4>
+                            <p>نظام يبني على ما تعلمته سابقاً ويقترح عليك الدروس المناسبة لمستواك.</p>
+                        </div>
+                        <div class="stat-card dark-card wide-card">
+                            <div class="stat-icon"><i class="fa-solid fa-user-group"></i></div>
+                            <h4>مجتمع طلاب العلم</h4>
+                            <p>تواصل مع آلاف الطلاب والعلماء في بيئة تعليمية محفزة.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vision/Scholar Card -->
+                    <div class="prince-card">
+                        <div class="prince-image">
+                            <!-- Placeholder for Scholar or Quran Image -->
+                            <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?q=80&w=1000&auto=format&fit=crop"
+                                alt="Holy Quran">
+                        </div>
+                        <div class="prince-quote">
+                            <p>"من يُرد الله به خيراً يفقهه في الدين". نسعى في منصة تبيان لتيسير سبل العلم الشرعي لكل
+                                راغب، مستخدمين أحدث التقنيات لخدمة كتاب الله وسنة نبيه، ليكون العلم متاحاً للجميع، في كل
+                                مكان، وبكل لسان.</p>
+                            <h3>الرؤية التعليمية للمنصة</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="active"></span>
+                    <span></span>
+                </div>
+            </section>
+
+            <!-- Section 3: Latest Lessons (ex-Circulars) -->
+            <section class="circulars-section">
+                <div class="section-header">
+                    <h2>أحدث الدروس والمحاضرات</h2>
+                    <div class="section-nav">
+                        <span>تبيان</span> <i class="fa-solid fa-chevron-left"></i> <span>المكتبة</span>
+                    </div>
+                </div>
+
+                <div class="circulars-grid">
+                    <!-- Lesson Item 1 -->
+                    <div class="circular-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
+                                alt="Lesson Image">
+                            <span class="date-badge">جديد</span>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h4 style="margin-bottom: 5px;">شرح صحيح البخاري</h4>
+                                <p style="font-size: 0.8rem; color: #aaa;">الشيخ د. سعد الشتري</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="action-btn" title="استمع"><i class="fa-solid fa-play"></i></a>
+                                <a href="#" class="action-btn" title="إضافة للمسار"><i class="fa-solid fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lesson Item 2 -->
+                    <div class="circular-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
+                                alt="Lesson Image">
+                            <span class="date-badge" style="background: #e74c3c; color: white;">مباشر</span>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h4 style="margin-bottom: 5px;">تفسير سورة الكهف</h4>
+                                <p style="font-size: 0.8rem; color: #aaa;">الشيخ د. صالح المغامسي</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="action-btn" title="استمع"><i class="fa-solid fa-play"></i></a>
+                                <a href="#" class="action-btn" title="إضافة للمسار"><i class="fa-solid fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lesson Item 3 -->
+                    <div class="circular-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
+                                alt="Lesson Image">
+                            <span class="date-badge">مسار علمي</span>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h4 style="margin-bottom: 5px;">أصول الفقه للمبتدئين</h4>
+                                <p style="font-size: 0.8rem; color: #aaa;">الشيخ سليمان الرحيلي</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="action-btn" title="استمع"><i class="fa-solid fa-play"></i></a>
+                                <a href="#" class="action-btn" title="إضافة للمسار"><i class="fa-solid fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lesson Item 4 -->
+                    <div class="circular-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
+                                alt="Lesson Image">
+                            <span class="date-badge">مميز</span>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h4 style="margin-bottom: 5px;">سيرة النبي ﷺ</h4>
+                                <p style="font-size: 0.8rem; color: #aaa;">الشيخ د. عثمان الخميس</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="action-btn" title="استمع"><i class="fa-solid fa-play"></i></a>
+                                <a href="#" class="action-btn" title="إضافة للمسار"><i class="fa-solid fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lesson Item 5 -->
+                    <div class="circular-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
+                                alt="Lesson Image">
+                            <span class="date-badge">فقه</span>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h4 style="margin-bottom: 5px;">أحكام الصيام</h4>
+                                <p style="font-size: 0.8rem; color: #aaa;">الشيخ عبدالسلام الشويعر</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="action-btn" title="استمع"><i class="fa-solid fa-play"></i></a>
+                                <a href="#" class="action-btn" title="إضافة للمسار"><i class="fa-solid fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lesson Item 6 -->
+                    <div class="circular-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
+                                alt="Lesson Image">
+                            <span class="date-badge">عقيدة</span>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h4 style="margin-bottom: 5px;">شرح العقيدة الواسطية</h4>
+                                <p style="font-size: 0.8rem; color: #aaa;">الشيخ صالح الفوزان</p>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="action-btn" title="استمع"><i class="fa-solid fa-play"></i></a>
+                                <a href="#" class="action-btn" title="إضافة للمسار"><i class="fa-solid fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Tab Navigation -->
+        <nav class="bottom-tabs">
+            <div class="tab-item active" title="عن تبيان">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>عن تبيان</span>
+            </div>
+            <div class="tab-item" title="المسارات">
+                <i class="fa-solid fa-road"></i>
+                <span>المسارات</span>
+            </div>
+            <div class="tab-item" title="الشهادات">
+                <i class="fa-solid fa-certificate"></i>
+                <span>الشهادات</span>
+            </div>
+            <div class="tab-item" title="المجتمع">
+                <i class="fa-solid fa-users"></i>
+                <span>المجتمع</span>
+            </div>
+            <div class="tab-item" title="معاجم">
+                <i class="fa-solid fa-robot"></i>
+                <span>معاجم (AI)</span>
+            </div>
+
+            <a href="login.html" class="tab-item"
+                style="background-color: var(--accent-green); color: white; text-decoration: none;">
+                <i class="fa-solid fa-user-plus"></i>
+                <span>إنشاء حساب</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

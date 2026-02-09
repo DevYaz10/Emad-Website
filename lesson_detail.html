@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الدرس - منصة تبيان</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .lesson-container {
+            padding: 100px 60px 40px 60px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .video-wrapper img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            color: white;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .play-overlay:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            color: var(--accent-green);
+        }
+
+        .lesson-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .info-text h1 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .info-text p {
+            color: var(--text-gray);
+        }
+
+        .lesson-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-alt {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-alt:hover {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .tabs-section {
+            margin-top: 40px;
+        }
+
+        .lesson-tabs {
+            display: flex;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .l-tab {
+            padding-bottom: 10px;
+            cursor: pointer;
+            color: var(--text-gray);
+        }
+
+        .l-tab.active {
+            color: var(--accent-green);
+            border-bottom: 2px solid var(--accent-green);
+        }
+
+        .tab-content {
+            line-height: 1.8;
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="accessibility-bar">
+        <button id="neuro-mode"><i class="fa-solid fa-brain"></i></button>
+        <button id="vision-mode"><i class="fa-solid fa-eye"></i></button>
+    </div>
+
+    <nav class="sidebar">
+        <div class="sidebar-item" onclick="window.location.href='index.html'" title="الرئيسية"><i
+                class="fa-solid fa-house"></i></div>
+        <div class="sidebar-item active" title="المسارات"><i class="fa-solid fa-road"></i></div>
+    </nav>
+
+    <div class="app-container">
+        <header class="top-header">
+            <div class="header-right">
+                <div class="tibyan-logo"
+                    style="font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-book-quran" style="color: var(--accent-green);"></i> تبيان
+                </div>
+            </div>
+            <div class="header-left">
+                <div class="header-icons">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="lesson-container">
+            <div class="video-wrapper">
+                <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000" alt="Lesson Cover">
+                <div class="play-overlay"><i class="fa-solid fa-play-circle"></i></div>
+            </div>
+
+            <div class="lesson-info">
+                <div class="info-text">
+                    <h1>تفسير سورة الكهف - الدرس الرابع</h1>
+                    <p><i class="fa-solid fa-user-circle"></i> الشيخ د. صالح المغامسي | <i
+                            class="fa-solid fa-clock"></i> 45 دقيقة</p>
+                </div>
+                <div class="lesson-actions">
+                    <button class="btn-alt" onclick="addToPath(this)"><i class="fa-solid fa-plus"></i> إضافة
+                        للمسار</button>
+                    <button class="btn-alt" onclick="alert('جاري تحميل الملخص...')"><i class="fa-solid fa-file-pdf"></i>
+                        الملخص</button>
+                    <button class="btn-alt" onclick="window.location.href='test.html'"><i
+                            class="fa-solid fa-clipboard-question"></i> اختبار</button>
+                </div>
+            </div>
+
+            <div class="tabs-section">
+                <div class="lesson-tabs">
+                    <div class="l-tab active">الوصف</div>
+                    <div class="l-tab">المصطلحات</div>
+                    <div class="l-tab">التعليقات</div>
+                </div>
+                <div class="tab-content">
+                    <p>يتناول الشيخ في هذا الدرس تفسير الآيات من 20 إلى 35 من سورة الكهف، مبيناً معاني الفتية وأصحاب
+                        الكهف، والدروس المستفادة من قصتهم في الثبات على الحق...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function addToPath(btn) {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> تمت الإضافة';
+            btn.style.backgroundColor = 'var(--accent-green)';
+            btn.onclick = null;
+        }
+    </script>
+</body>
+
+</html>

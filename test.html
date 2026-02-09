@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاختبار - منصة تبيان</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .test-container {
+            padding: 100px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            background-color: rgba(0, 31, 29, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .option {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .option.selected {
+            border-color: var(--accent-green);
+            background: rgba(58, 181, 74, 0.2);
+        }
+
+        .option.correct {
+            background: #27ae60;
+            color: white;
+        }
+
+        .option.wrong {
+            background: #c0392b;
+            color: white;
+        }
+
+        .submit-test-btn {
+            background: var(--accent-green);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="sidebar">
+        <div class="sidebar-item" onclick="window.location.href='index.html'" title="الرئيسية"><i
+                class="fa-solid fa-house"></i></div>
+        <div class="sidebar-item" onclick="window.location.href='student_dashboard.html'" title="لوحتي"><i
+                class="fa-solid fa-user"></i></div>
+    </nav>
+
+    <div class="app-container">
+        <header class="top-header">
+            <div class="header-right">
+                <div class="tibyan-logo"
+                    style="font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-book-quran" style="color: var(--accent-green);"></i> تبيان
+                </div>
+            </div>
+            <div class="header-left">
+                <div class="header-icons">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="test-container">
+            <h1 style="margin-bottom: 30px;">اختبار: تفسير سورة الكهف</h1>
+
+            <div class="question-box">
+                <h3>1. كم لبث أصحاب الكهف في كهفهم؟</h3>
+                <div class="options" id="q1">
+                    <div class="option" onclick="selectOption(this, 1)">300 سنين وازدادوا تسعاً</div>
+                    <div class="option" onclick="selectOption(this, 1)">100 عام</div>
+                    <div class="option" onclick="selectOption(this, 1)">يوم أو بعض يوم</div>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <h3>2. ما هي الفتنة التي نجى منها أصحاب الكهف؟</h3>
+                <div class="options" id="q2">
+                    <div class="option" onclick="selectOption(this, 2)">فتنة المال</div>
+                    <div class="option" onclick="selectOption(this, 2)">فتنة الدين</div>
+                    <div class="option" onclick="selectOption(this, 2)">فتنة العلم</div>
+                </div>
+            </div>
+
+            <button class="submit-test-btn" onclick="submitTest()">إرسال الإجابة</button>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function selectOption(el, qId) {
+            const parent = document.getElementById('q' + qId);
+            const options = parent.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            el.classList.add('selected');
+        }
+
+        function submitTest() {
+            // Mock Validation
+            alert('أحسنت! نتيجتك: 100%');
+            window.location.href = 'student_dashboard.html';
+        }
+    </script>
+</body>
+
+</html>
