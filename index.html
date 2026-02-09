@@ -17,6 +17,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/decorative.css">
 </head>
 
 <body>
@@ -35,38 +36,34 @@
 
         <!-- Right Sidebar Navigation -->
         <nav class="sidebar">
-            <div class="sidebar-item active" title="القائمة">
-                <i class="fa-solid fa-bars"></i>
-                <span class="tooltip">القائمة</span>
-            </div>
-            <div class="sidebar-item" title="الرئيسية">
+            <a href="index.html" class="sidebar-item" title="الرئيسية">
                 <i class="fa-solid fa-house"></i>
-                <span class="tooltip">الرئيسية</span>
-            </div>
-            <div class="sidebar-item" title="عن تبيان">
+                <span class="tooltip">القائمة الرئيسية</span>
+            </a>
+            <a href="about.html" class="sidebar-item" title="عن تبيان">
                 <i class="fa-solid fa-info-circle"></i>
                 <span class="tooltip">عن تبيان</span>
-            </div>
-            <div class="sidebar-item" title="الخدمات">
+            </a>
+            <a href="services.html" class="sidebar-item" title="الخدمات">
                 <i class="fa-solid fa-layer-group"></i>
                 <span class="tooltip">الخدمات</span>
-            </div>
-            <div class="sidebar-item" title="المسارات العلمية">
+            </a>
+            <a href="paths.html" class="sidebar-item" title="المسارات العلمية">
                 <i class="fa-solid fa-road"></i>
                 <span class="tooltip">المسارات العلمية</span>
-            </div>
-            <div class="sidebar-item" title="الأرشيف">
+            </a>
+            <a href="archive.html" class="sidebar-item" title="الأرشيف">
                 <i class="fa-solid fa-box-archive"></i>
                 <span class="tooltip">الأرشيف</span>
-            </div>
-            <div class="sidebar-item" title="الدروس المباشرة">
+            </a>
+            <a href="live.html" class="sidebar-item" title="الدروس المباشرة">
                 <i class="fa-solid fa-video"></i>
                 <span class="tooltip">الدروس المباشرة</span>
-            </div>
-            <div class="sidebar-item" title="الدعم والملاحظات">
+            </a>
+            <a href="support.html" class="sidebar-item" title="الدعم والملاحظات">
                 <i class="fa-solid fa-headset"></i>
                 <span class="tooltip">الدعم والملاحظات</span>
-            </div>
+            </a>
         </nav>
 
         <!-- Main Content Area -->
@@ -75,9 +72,9 @@
             <!-- Top Header -->
             <header class="top-header">
                 <div class="header-left">
-                    <!-- 2030 Logo kept or removed based on user preference? Assuming removed for pure platform identity or kept as sponsor. Let's keep for realism if it's a Saudi platform -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Vision_2030_Logo.svg/1200px-Vision_2030_Logo.svg.png"
-                        alt="Vision 2030" class="vision-logo">
+                    <!-- Vision 2030 Logo -->
+                    <img src="https://www.vision2030.gov.sa/media/rc0b5oy1/saudi-vision203.svg"
+                        alt="Vision 2030" class="vision-logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2230%22%3E%3Ctext x=%2210%22 y=%2220%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%232ecc71%22 font-weight=%22bold%22%3E2030 رؤية%3C/text%3E%3C/svg%3E';">
                     <div class="header-icons">
                         <i class="fa-solid fa-globe" title="تغيير اللغة"></i> <span>العربية</span>
                         <i class="fa-solid fa-magnifying-glass" title="بحث"></i>
@@ -233,10 +230,10 @@
                         <span>تبيان</span> <i class="fa-solid fa-chevron-left"></i> <span>المكتبة</span>
                     </div>
                 </div>
-
+<!-- new commit -->
                 <div class="circulars-grid">
                     <!-- Lesson Item 1 -->
-                    <div class="circular-card">
+                    <div class="circular-card" data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ" data-lesson-title="شرح صحيح البخاري" data-teacher="الشيخ د. سعد الشتري">
                         <div class="card-image">
                             <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
                                 alt="Lesson Image">
@@ -248,13 +245,13 @@
                                 <p style="font-size: 0.8rem; color: #aaa;">الشيخ د. سعد الشتري</p>
                             </div>
                             <div class="card-actions">
-                                <a href="#" class="action-btn" title="استمع"><i class="fa-solid fa-play"></i></a>
+                                <button class="action-btn play-video-btn" title="استمع"><i class="fa-solid fa-play"></i></button>
                                 <a href="#" class="action-btn" title="إضافة للمسار"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
                     <!-- Lesson Item 2 -->
-                    <div class="circular-card">
+                    <div class="circular-card" data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ" data-lesson-title="تفسير سورة الكهف" data-teacher="الشيخ د. صالح المغامسي">
                         <div class="card-image">
                             <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=1000&auto=format&fit=crop"
                                 alt="Lesson Image">
@@ -266,7 +263,7 @@
                                 <p style="font-size: 0.8rem; color: #aaa;">الشيخ د. صالح المغامسي</p>
                             </div>
                             <div class="card-actions">
-                                <a href="#" class="action-btn" title="استمع"><i class="fa-solid fa-play"></i></a>
+                                <button class="action-btn play-video-btn" title="استمع"><i class="fa-solid fa-play"></i></button>
                                 <a href="#" class="action-btn" title="إضافة للمسار"><i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>

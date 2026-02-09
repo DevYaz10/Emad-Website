@@ -1,0 +1,366 @@
+/* ====================================
+   Islamic Decorative Elements
+   Additional CSS for ornamental features
+   ==================================== */
+
+/* ===== Decorative Borders ===== */
+.islamic-ornament-top {
+    position: relative;
+    padding-top: 40px;
+}
+
+.islamic-ornament-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 30px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--accent-green) 20%, 
+        var(--green-light) 50%, 
+        var(--accent-green) 80%, 
+        transparent 100%
+    );
+    clip-path: polygon(
+        0% 100%, 10% 0%, 20% 50%, 30% 0%, 40% 50%, 
+        50% 0%, 60% 50%, 70% 0%, 80% 50%, 90% 0%, 100% 100%
+    );
+}
+
+.islamic-star {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.islamic-star::before,
+.islamic-star::after {
+    content: '✦';
+    position: absolute;
+    color: var(--accent-green);
+    font-size: 2rem;
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+.islamic-star::after {
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* ===== Geometric Pattern Background ===== */
+.geometric-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+.geometric-pattern::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 80% 50%, rgba(45, 134, 77, 0.05) 2px, transparent 2px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+/* ===== Arabesque Divider ===== */
+.arabesque-divider {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arabesque-divider::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--teal-dark) 30%, 
+        var(--accent-green) 50%, 
+        var(--teal-dark) 70%, 
+        transparent 100%
+    );
+}
+
+.arabesque-divider::after {
+    content: '۞';
+    position: relative;
+    z-index: 1;
+    background: var(--bg-primary);
+    padding: 0 20px;
+    color: var(--accent-green);
+    font-size: 1.5rem;
+}
+
+/* ===== Islamic Calligraphy Style Text ===== */
+.calligraphy-text {
+    font-family: 'Amiri', 'Cairo', serif;
+    font-size: 1.8rem;
+    color: var(--green-light);
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    padding: 20px;
+}
+
+.calligraphy-text::before,
+.calligraphy-text::after {
+    content: '❈';
+    color: var(--accent-green);
+    font-size: 1.2rem;
+    margin: 0 15px;
+}
+
+/* ===== Mosque Dome SVG Pattern ===== */
+.dome-pattern {
+    position: relative;
+    padding: 40px 0;
+}
+
+.dome-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 50% 100%, 
+        var(--accent-green) 0%, 
+        var(--teal-dark) 50%, 
+        transparent 100%
+    );
+    border-radius: 50% 50% 0 0;
+    opacity: 0.3;
+}
+
+/* ===== Prayer Times Card Style ===== */
+.prayer-card {
+    background: linear-gradient(135deg, var(--navy-medium), var(--navy-deep));
+    border: 3px solid var(--accent-green);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.prayer-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== Crescent Moon Icon ===== */
+.crescent-icon {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.crescent-icon::before {
+    content: '☪';
+    position: absolute;
+    font-size: 2rem;
+    color: var(--accent-green);
+    filter: drop-shadow(0 0 10px var(--accent-green));
+}
+
+/* ===== Lantern Glow Effect ===== */
+.lantern-glow {
+    position: relative;
+    padding: 20px;
+}
+
+.lantern-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, 
+        rgba(212, 175, 55, 0.2) 0%, 
+        rgba(212, 175, 55, 0.1) 50%, 
+        transparent 100%
+    );
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+/* ===== Quran Verse Container ===== */
+.quran-verse {
+    background: var(--bg-card);
+    border-right: 5px solid var(--accent-green);
+    border-left: 5px solid var(--accent-green);
+    padding: 30px;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+.quran-verse::before {
+    content: '﷽';
+    display: block;
+    font-size: 2rem;
+    color: var(--accent-green);
+    margin-bottom: 15px;
+    font-family: 'Amiri', 'Cairo', serif;
+}
+
+.quran-verse p {
+    font-size: 1.4rem;
+    line-height: 2;
+    color: var(--text-primary);
+    font-family: 'Amiri', 'Cairo', serif;
+}
+
+/* ===== Badge with Islamic Design ===== */
+.islamic-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-metallic);
+    color: var(--navy-deep);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: var(--shadow-gold);
+    position: relative;
+}
+
+.islamic-badge::before {
+    content: '◈';
+    color: var(--navy-deep);
+}
+
+/* ===== Decorative Corner Ornaments ===== */
+.corner-ornament {
+    position: relative;
+}
+
+.corner-ornament::before,
+.corner-ornament::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--accent-green);
+}
+
+.corner-ornament::before {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+    border-top-right-radius: 10px;
+}
+
+.corner-ornament::after {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+}
+
+/* ===== Mandala Pattern ===== */
+.mandala-bg {
+    background-image: 
+        repeating-conic-gradient(
+            from 0deg at 50% 50%,
+            transparent 0deg,
+            rgba(212, 175, 55, 0.03) 30deg,
+            transparent 60deg
+        );
+    background-size: 200px 200px;
+}
+
+/* ===== Gold Shimmer Text ===== */
+.shimmer-text {
+    background: linear-gradient(
+        90deg,
+        var(--teal-dark) 0%,
+        var(--green-light) 25%,
+        var(--accent-green) 50%,
+        var(--green-light) 75%,
+        var(--teal-dark) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* ===== Floating Animation for Icons ===== */
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
